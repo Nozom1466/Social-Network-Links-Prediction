@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Tom",
+      "symbolSize": 20,
+      "value": 10,
+      "category": 0
+    },
+    {
+      "id": "2",
+      "name": "Jerry",
+      "symbolSize": 10,
+      "value": 10,
+      "category": 0
+    },
+    {
+      "id": "4",
+      "name": "Spike",
+      "symbolSize": 50,
+      "value": 10,
+      "category": 0
+    },
+    {
+      "id": "3",
+      "name": "HOME",
+      "symbolSize": 20,
+      "value": 10,
+      "category": 1
+    }
+  ],
+  "links": [
+    {
+      "source": "1",
+      "target": "2"
+    },
+    {
+      "source": "1",
+      "target": "3"
+    },
+    {
+      "source": "2",
+      "target": "3"
+    },
+    {
+      "source": "4",
+      "target": "1"
+    }
+  ],
+  "categories": [
+    {
+      "name": "person",
+      "number": 3
+    },
+    {
+      "name": "home",
+      "number": 1
+    }
+  ]
+}

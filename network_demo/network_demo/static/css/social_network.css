@@ -1,0 +1,212 @@
+/* global initialization */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* CONTAINER */
+.view {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/* CANVAS */
+.canvas {
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+}
+
+/* CANVAS */
+.warning-alert {
+    position: absolute;
+    width: 25%;
+    height: auto;
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
+
+}
+
+
+/* ALL SIDEBARS */
+.view .sidebar{
+    margin: 0;
+    position: absolute;
+    width: 21%;
+    opacity: 0.9;
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.06);
+}
+
+
+/* ALL SCROLLBARS*/
+.scrollbar {
+  margin-left: 30px;
+  float: left;
+  background: #fff;
+  margin-bottom: 25px;
+}
+
+.scrollbar-primary::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F5F5F5;
+}
+
+.scrollbar-primary::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #4285F4;
+}
+
+.scrollbar-primary {
+  scrollbar-color: #4285F4 #F5F5F5;
+}
+
+
+/* CTRL ISLAND  */
+.view .ctrl-island {
+    opacity: 0.9;
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.06);
+}
+
+.view .ctrl-island {
+    position: absolute;
+    width: 20%;
+    bottom: 1%;
+    left: 50%;
+    border-radius: 100px;
+    transform: translateX(-50%);
+}
+
+.ctrl-island .ctrl-button {
+    border-radius: 100px;
+ }
+
+.ctrl-island .ctrl-island-content {
+    padding: 0.5rem 0.25rem;
+}
+
+
+/* LEFT SIDEBAR */
+/* card for selecting events */
+.left-sidebar-1 {
+    top: 1rem;
+    left: 1rem;
+}
+
+.view .left-sidebar-1 {
+    height: 75%;
+}
+
+.left-sidebar-1 .user-info-content {
+    margin: 0;
+}
+
+.nav-link.active {
+
+}
+
+.user-info-card:hover {
+    cursor: pointer;
+}
+
+
+
+
+/* card for load data */
+.left-sidebar-2 {
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.card-header-text {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.option-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn.option-box-choice {
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+}
+
+
+
+
+
+/* RIGHT SIDEBAR */
+/* card for displaying details*/
+.view .right-sidebar-1 {
+    height: 45%;
+
+    top: 1rem;
+    right: 1rem;
+}
+
+.right-sidebar-1 .detailed-info-content {
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.right-sidebar-1 .detailed-info-content .list-group {
+    margin-bottom: 1rem;
+}
+
+/* card for making predictions*/
+.view .right-sidebar-2 {
+    height: 45%;
+
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.prediction-selection-form .algorithm-mode-box ,
+.prediction-selection-form .form-floating {
+    margin-bottom: 1rem;
+}
+
+.form-floating {
+    opacity: 1;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.right-sidebar-2 .correlation-predictions-content {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+/*TODO: .prediction-item:hover { cursor: pointer }*/

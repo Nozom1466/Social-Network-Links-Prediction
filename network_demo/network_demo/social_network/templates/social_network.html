@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Social Network</title>
+
+    <!-- custom css -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/social_network.css' %}"/>
+
+    <!-- bootstrap -->
+    <link type="text/css" rel="stylesheet" href="{% static 'externals/bootstrap/css/bootstrap.css' %}"/>
+</head>
+<body>
+    <div class="view">
+        <div id="main" class="canvas"></div>
+        <!-- left sidebar -->
+        <div class="card text-center left-sidebar-1 sidebar collapse show" id="u-card">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <button class="nav-link active" aria-current="true" href="#">Users</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" aria-current="true" href="#">Organizations</button>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body overflow-auto user-info-content scrollbar scrollbar-primary">
+          </div>
+        </div>
+        <div class="card text-center left-sidebar-2 sidebar collapse show" id="d-card">
+          <div class="card-header">
+            <p class="card-header-text">Load your data here</p>
+          </div>
+          <div class="card-body">
+            <div class="gap-4 option-box load-data-block">
+              <button type="button" class="btn btn-primary option-box-choice load-default" data-bs-toggle="modal" data-bs-target="#fileUploadModel">
+                Default
+              </button>
+              <button type="button" class="btn btn-primary option-box-choice load-custom" data-bs-toggle="modal" data-bs-target="#fileUploadModel">
+                Custom
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- right sidebar -->
+        <div class="card text-center right-sidebar-1 sidebar collapse show" id="c-card" >
+          <div class="card-header">
+            <p class="card-header-text">Detailed Information</p>
+          </div>
+          <div class="card card-body detailed-info-content overflow-auto scrollbar scrollbar-primary">
+              <img src="{% static 'images/user/avatar.jpg' %}" class="card-img-top" alt="Kasaki Nozomi">
+              <div class="card-body">
+                <h5 class="card-title">Kaski Nozomi</h5>
+              </div>
+              <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Name
+                    <div class="name-item-content text-nowrap bg-body-secondary border">
+                      Kaski Nozomi
+                    </div>
+                  </li>
+              </ul>
+              <div class="card-body prediction-selection-form">
+                  <div class="row algorithm-mode-box">
+                      <div class="col">
+                        <select class="form-select form-select-algorithm" id="algorithm-select" aria-label="Default select example">
+                          <option selected>Algorithm</option>
+                          <option value="1">Intersection</option>
+                          <option value="2">IoU</option>
+                          <option value="3">Adamic-Adar</option>
+                          <option value="4">CCPA</option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <select class="form-select form-select-target" id="mode-select" aria-label="Default select example">
+                          <option selected>Mode</option>
+                          <option value="all">All Users</option>
+                          <option value="target">Target User</option>
+                        </select>
+                      </div>
+                 </div>
+                  <div class="form-floating" id="target_user_input" style="display:none;" >
+                    <input type="text" class="form-control form-select-target-user" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Target User Name</label>
+                  </div>
+                  <button class="btn btn-primary make-prediction-bt" type="submit">Make Predictions</button>
+              </div>
+          </div>
+        </div>
+        <div class="card text-center right-sidebar-2 sidebar collapse show" id="p-card">
+          <div class="card-header">
+            <p class="card-header-text">Predictions</p>
+          </div>
+          <div class="card-body overflow-auto correlation-predictions-content scrollbar scrollbar-primary">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Correlation</th>
+                </tr>
+              </thead>
+              <tbody class="prediction-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- control island -->
+        <div class="card text-center ctrl-island d-flex">
+          <div class="card-body ctrl-island-content d-flex justify-content-around">
+            <button class="btn btn-primary btn-lg ctrl-button" type="button" data-bs-toggle="collapse" data-bs-target="#u-card">U</button>
+            <button class="btn btn-primary btn-lg ctrl-button" type="button" data-bs-toggle="collapse" data-bs-target="#d-card">D</button>
+            <button class="btn btn-primary btn-lg ctrl-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-card">C</button>
+            <button class="btn btn-primary btn-lg ctrl-button" type="button" data-bs-toggle="collapse" data-bs-target="#p-card">P</button>
+          </div>
+        </div>
+
+        <!-- input warning -->
+        <div class="warning-alert alert alert-warning text-center" role="alert" style="display: none">
+          warning...
+        </div>
+
+        <!-- file upload model -->
+        <div class="modal fade" id="fileUploadModel" tabindex="-1" aria-labelledby="fileUploadModelLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary OK-bt" data-bs-dismiss="modal">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- test js -->
+    <script>
+        const DEFAULT_JSON_SEQ = 0
+
+        var load_count = 0
+
+        var static_json_folder = "{% static 'json' %}"
+
+        var image_srcs = [
+            "{% static 'images/user/avatar.jpg' %}",
+            "{% static 'images/user/not_found.png' %}",
+            "{% static 'images/organization/not_found.png' %}",
+        ]
+
+        var graph_json_srcs = [
+            "{% static 'json/graph_random_category_with_cate_length.json' %}"
+        ]
+
+        var csrfmiddlewaretoken = '{{ csrf_token }}'
+    </script>
+
+    <!-- echarts -->
+    <script type="text/javascript" src="{% static 'externals/echarts/echarts.js' %}"></script>
+
+    <!-- jquery -->
+    <script type="text/javascript" src="{% static 'externals/jquery/jquery.js' %}"></script>
+
+    <!-- bootstrap -->
+    <script type="text/javascript" src="{% static 'externals/bootstrap/js/bootstrap.bundle.js' %}"></script>
+
+    <!-- custom js -->
+    <script type="text/javascript" src="{% static 'js/social_network.js' %}"></script>
+
+</body>
+</html>
+
