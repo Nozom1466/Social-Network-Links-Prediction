@@ -83,9 +83,7 @@ data generator in folder `data\eupho_dataset\dataset_generator.ipynb`
 $C(u, v)$ denotes the prediction score between individual $u$ and $v$.
 
 **(Weighted) Intersection**
-$
-  C(u, v) = \sum_{k \in \text{categories}} w_{u, k} \cdot N_{u, v, k}
-$
+$C(u, v) = \sum_{k \in \text{categories}} w_{u, k} \cdot N_{u, v, k}$
 
 **Intersection over Union**
 $
