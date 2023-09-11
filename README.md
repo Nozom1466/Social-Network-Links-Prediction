@@ -70,7 +70,7 @@ return to Defalut graph at `Default`
 ![default](/pages/default.png)
 
 
-## Dataset Generation
+## Generate Dataset
 data generator in folder `data\eupho_dataset\dataset_generator.ipynb`
 
 > As for the name `eupho`, I initially wanted to build up a network with the purpose of displaying *sophisticated* interpersonal relationships in Animation Series `Sound! Euphonium`. And that's exactly the reason why I tested *Japanese names* in my demo dataset. The organizations in this network could be schools, clubs, companies or even social groups and person nodes are individuals (characters in the anime :) )
