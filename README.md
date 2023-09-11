@@ -55,7 +55,7 @@ wrong input get warnings
 ![warnings](/pages/warnings.png)
 
 
-manage your page with control island
+manage your page with control island (UDCP Buttons)
 ![manage your page](/pages/page_management.png)
 
 
