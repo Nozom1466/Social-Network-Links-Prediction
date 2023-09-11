@@ -26,7 +26,7 @@ enter the folder with `manage.py` then start service
 cd network_demo
 python manage.py runserver
 ```
-![Initial view](\pages\initial.png)
+![Initial view](/pages/initial.png)
 
 
 scale background graph by scrolling
