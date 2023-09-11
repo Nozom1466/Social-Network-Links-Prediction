@@ -18,7 +18,7 @@ conda activate social_network
 
 ## Quick Start
 An overview
-![Overview](\pages\overview.png)
+![Overview](/pages/overview.png)
 
 
 enter the folder with `manage.py` then start service
