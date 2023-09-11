@@ -82,12 +82,12 @@ data generator in folder `data\eupho_dataset\dataset_generator.ipynb`
 ## Prediction Algorithms
 $C(u, v)$ denotes the prediction score between individual $u$ and $v$.
 
-#### (Weighted) Intersection
+### (Weighted) Intersection
 
 
 $C(u, v) = \sum_{k \in \text{categories}} w_{u, k} \cdot N_{u, v, k}$
 
-#### Intersection over Union
+### Intersection over Union
 
 
 $C(u, v) = \frac{|\Gamma(u) \cap \Gamma(v)|}{|\Gamma(u) \cup \Gamma(v)|}$
@@ -97,7 +97,7 @@ where $\Gamma(u)$ denotes the set of neighbors of $u$, $\Gamma(v)$ denotes the s
 > Bonus: individual social habits considered. A wide range of friends means less strengthed friendship while deeper friendship expected for individuals who have fewer connections with others. The node would earn higher score if it had a few connections but still shared many nodes with the target.
 
 
-#### Adamic-Adar Index
+### Adamic-Adar Index
 [Official Networkx Implementation](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.link_prediction.adamic_adar_index.html)
 
 
@@ -107,7 +107,7 @@ $C(u, v) = \sum_{w \in \Gamma(u) \cap \Gamma(v)} \frac{1}{\log |\Gamma(w)|}$
 where $\Gamma(u)$ denotes the set of neighbors of $u$. This index leads to zero-division for nodes only connected via self-loops. It is intended to be used when no self-loops are present.
 .
 
-#### Common Neighbor Centrality (CCPA Score)
+### Common Neighbor Centrality (CCPA Score)
 [Official Networkx Implementation](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.link_prediction.common_neighbor_centrality.html)
 
 
