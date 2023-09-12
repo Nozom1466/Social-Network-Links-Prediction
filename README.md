@@ -1,6 +1,13 @@
 # Social-Network-Links-Prediction
 Tongji Data Structure Project - Social Network Links Prediction
 
+## Disclaimer
+- Name generator: [Name generator](https://www.namechef.co/zh/name-generator/japanese/?gender=any&last_name_type=random&last_name=&popularity%5B%5D=any)
+- organizations (schools)
+    - [high school](https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E5%BA%9C%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1%E4%B8%80%E8%A6%A7)
+    - [junior school](https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%B8%AD%E5%AD%A6%E6%A0%A1%E4%B8%80%E8%A6%A7)
+    - [primary school](https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E5%BA%9C%E5%B0%8F%E5%AD%A6%E6%A0%A1%E4%B8%80%E8%A6%A7)
+
 ## Languages & Packages & Frameworks
 - `javascript`, `python`(+ `jupyter notebook`)
 - `echarts`, `bootstrap`, `ajax`, `networkx`
