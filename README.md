@@ -1,5 +1,6 @@
 # Social-Network-Links-Prediction
 Tongji Data Structure Project - Social Network Links Prediction
+[video](https://www.bilibili.com/video/BV1mP41187tY/?spm_id_from=333.999.0.0&vd_source=d0416378a50b5f05a80e1ed2ccc0792f)
 
 ## Disclaimer
 - Name generator: [Name generator](https://www.namechef.co/zh/name-generator/japanese/?gender=any&last_name_type=random&last_name=&popularity%5B%5D=any)
